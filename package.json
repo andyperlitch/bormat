@@ -1,0 +1,22 @@
+{
+  "name": "bormat",
+  "version": "0.0.1",
+  "description": "a bunch of boring utility functions for formatting time and numbers, mostly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andyperlitch/bormat.git"
+  },
+  "keywords": [
+    "formatter",
+    "formats",
+    "time-since",
+    "time-until",
+    "numbers"
+  ],
+  "author": "andy perlitch",
+  "license": "BSD"
+}
