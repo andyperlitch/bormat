@@ -1,6 +1,6 @@
 {
   "name": "bormat",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a bunch of boring utility functions for formatting time and numbers, mostly.",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,9 @@
     "time-until",
     "numbers"
   ],
+  "dependencies": {
+    "underscore": ""
+  },
   "author": "andy perlitch",
   "license": "BSD"
 }
