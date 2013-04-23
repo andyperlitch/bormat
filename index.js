@@ -1,6 +1,7 @@
-function timeSince(timestamp, compareDate, timeChunk) {
+function timeSince(timestamp, compareDate, timeChunk, maxUnit) {
     var now = compareDate === undefined ? +new Date() : compareDate;
     var remaining = (timeChunk !== undefined) ? timeChunk : now - timestamp;
+    maxUnit = maxUnit || "year";
     var string = "";
     var separator = ", ";
     var level = 0;
@@ -14,7 +15,6 @@ function timeSince(timestamp, compareDate, timeChunk) {
     var milli_per_year = milli_per_day * 365;
     
     var levels = [
-    
         { plural: "years", singular: "year", ms: milli_per_year },
         { plural: "months", singular: "month", ms: milli_per_month },
         { plural: "weeks", singular: "week", ms: milli_per_week },
@@ -24,8 +24,10 @@ function timeSince(timestamp, compareDate, timeChunk) {
         { plural: "seconds", singular: "second", ms: milli_per_second }
     ];
     
+    var crossedThreshold = false;
     for (var i=0; i < levels.length; i++) {
-        if ( remaining < levels[i].ms ) continue;
+        if ( maxUnit === levels[i].singular ) crossedThreshold = true;
+        if ( remaining < levels[i].ms || !crossedThreshold ) continue;
         level++;
         var num = Math.floor( remaining / levels[i].ms );
         var label = num == 1 ? levels[i].singular : levels[i].plural ;
