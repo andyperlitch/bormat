@@ -38,6 +38,10 @@ describe("a boring format util: ", function() {
             assert.equal( bormat.timeSince(timestamp, {unixUptime: true}), "35 days, 1:02", "timeSince did not format unix uptime correctly");
         });
         
+        it("should be able to take a time chunk", function() {
+            assert.equal( bormat.timeSince({timeChunk: 3600000}), "1 hour");
+        });
+        
     });
     
 })

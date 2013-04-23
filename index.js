@@ -1,15 +1,20 @@
 if (typeof _ === "undefined") var _ = require('underscore');
 
-function timeSince(timestamp, options) {
+function timeSince(timeStamp, options) {
+    if (typeof timeStamp === "object") {
+        options = timeStamp;
+        timeStamp = undefined;
+    }
     options = options || {};
     _.defaults(options, {
         compareDate: +new Date(),
         timeChunk: undefined,
         maxUnit: "year",
         unixUptime: false,
-        max_levels: 3
+        max_levels: 3,
+        timeStamp: timeStamp || 0
     });
-    var remaining = (options.timeChunk !== undefined) ? timeChunk : options.compareDate - timestamp;
+    var remaining = (options.timeChunk !== undefined) ? options.timeChunk : options.compareDate - options.timeStamp;
     var string = "";
     var separator = ", ";
     var level = 0;
