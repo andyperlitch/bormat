@@ -1,6 +1,6 @@
 {
   "name": "bormat",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "a bunch of boring utility functions for formatting time and numbers, mostly.",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "numbers"
   ],
   "dependencies": {
-    "underscore": ""
+    "underscore": ">=1.4.3"
   },
   "author": "andy perlitch",
   "license": "BSD"
