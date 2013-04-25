@@ -1,5 +1,3 @@
-if (typeof _ === "undefined") var _ = require('underscore');
-
 function timeSince(timeStamp, options) {
     if (typeof timeStamp === "object") {
         options = timeStamp;
