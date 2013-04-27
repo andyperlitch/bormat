@@ -18,5 +18,8 @@
     "numbers"
   ],
   "author": "andy perlitch",
-  "license": "BSD"
+  "license": "BSD",
+  "dependencies": {
+      "underscore": ">=1.4.3"
+  }
 }
