@@ -32,7 +32,17 @@ function timeSince(timeStamp, options) {
         var hours = Math.floor(remaining / milli_per_hour);
         remaining -= hours*milli_per_hour;
         var minutes = Math.round(remaining / milli_per_minute);
-        string = days + " days, " + hours.toString() + ":" + (minutes < 10 ? "0" : "") + minutes.toString()
+        
+        if (days === 0) {
+            minutes = Math.floor(remaining / milli_per_minute);
+            remaining -= minutes*milli_per_minute;
+            var seconds = Math.round(remaining / 1000);
+            string = (hours < 10 ? "0" : "")+hours+':'+(minutes < 10 ? "0" : "")+minutes+':'+(seconds < 10 ? "0" : "")+seconds;
+        }
+        else {
+            string = days + " days, " + hours.toString() + ":" + (minutes < 10 ? "0" : "") + minutes.toString();
+        }
+        
     } else {
         var levels = [
             { plural: "years", singular: "year", ms: milli_per_year },
