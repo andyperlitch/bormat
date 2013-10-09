@@ -73,6 +73,7 @@ function timeSince(timeStamp, options) {
 }
 
 function commaGroups(value) {
+    if (typeof value === 'undefined') return '';
     var parts = value.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return parts.join(".");
