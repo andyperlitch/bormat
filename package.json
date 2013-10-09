@@ -1,6 +1,6 @@
 {
   "name": "bormat",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "a bunch of boring utility functions for formatting time and numbers, mostly.",
   "main": "index.js",
   "scripts": {
