@@ -40,7 +40,7 @@ function timeSince(timeStamp, options) {
             string = (hours < 10 ? "0" : "")+hours+':'+(minutes < 10 ? "0" : "")+minutes+':'+(seconds < 10 ? "0" : "")+seconds;
         }
         else {
-            string = days + " days, " + hours.toString() + ":" + (minutes < 10 ? "0" : "") + minutes.toString();
+            string = days + " day" + (days == 1 ? "" : "s") + ", " + hours.toString() + ":" + (minutes < 10 ? "0" : "") + minutes.toString();
         }
         
     } else {
